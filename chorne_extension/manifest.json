@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Phishing Extension By @hatuhuy",
+  "version": "1.0.9",
+  "description": "Tiện ích giúp bảo vệ bạn khỏi các trang web có nguy cơ lừa đảo, giả mạo, có nội dung xấu hoặc phần mềm độc hại.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs",
+    "http://*/*",
+    "https://*/*"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+      "service_worker": "background.js"
+  },
+  "content_scripts": [
+      {
+          "matches": ["<all_urls>"],
+          "js": ["content.js"]
+         
+      }
+  ],
+  "action": {
+      "default_popup": "plugin_ui.html"
+  }
+}
